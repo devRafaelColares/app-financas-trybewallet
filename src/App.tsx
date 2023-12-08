@@ -8,7 +8,7 @@ function App() {
     <main>
       <Routes>
         <Route path="/" Component={ Login } />
-        <Route path="/cartaira" Component={ Wallet } />
+        <Route path="/carteira" Component={ Wallet } />
       </Routes>
     </main>
 

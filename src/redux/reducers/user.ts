@@ -1,13 +1,11 @@
-import { ActionType } from '../../types';
+import { ActionTypeUser } from '../../types';
 import { SET_EMAIL } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-  user: {
-    email: '', // string que armazena o e-mail da pessoa usuária
-  },
+  email: '', // string que armazena o e-mail da pessoa usuária
 };
 
-const user = (state = INITIAL_STATE, action: ActionType) => {
+const user = (state = INITIAL_STATE, action: ActionTypeUser) => {
   switch (action.type) {
     case SET_EMAIL:
       return {
