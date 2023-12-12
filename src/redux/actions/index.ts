@@ -1,6 +1,6 @@
 // Coloque aqui suas actions
 import { Dispatch } from '../../types';
-import { REQUEST_FAILED, SET_CURRENCIES_IN_SELECT,
+import { DELETE_EXPENSE, REQUEST_FAILED, SET_CURRENCIES_IN_SELECT,
   SET_EMAIL,
   SET_EXPENSE } from './actionTypes';
 
@@ -25,6 +25,11 @@ export const setNewExpense = (expenses: any) => ({
   type: SET_EXPENSE,
   payload: expenses,
 
+});
+
+export const deleteExpense = (actualExpense: number) => ({
+  type: DELETE_EXPENSE,
+  payload: actualExpense,
 });
 
 export function fetchCurrenciesAPI() {

@@ -1,9 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ReduxState, Expense } from '../types';
+import { deleteExpense } from '../redux/actions';
 
 function Table() {
+  const dispatch = useDispatch();
   const expenses = useSelector((state: ReduxState) => state.wallet.expenses);
+
+  const handleRemoveExpense = (expenseId: any) => {
+    dispatch(deleteExpense(expenseId));
+  };
 
   return (
     <table>
@@ -34,6 +40,15 @@ function Table() {
                 .exchangeRates[expense.currency]?.ask || 0)).toFixed(2)}
             </td>
             <td>Real</td>
+            <td>
+              <button
+                data-testid="delete-btn"
+                onClick={ () => handleRemoveExpense(expense.id) }
+              >
+                Excluir
+
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
