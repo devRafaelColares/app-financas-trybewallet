@@ -1,1 +1,4 @@
 export const SET_EMAIL = 'SET_EMAIL';
+export const SET_CURRENCIES_IN_SELECT = 'SET_CURRENCIES_IN_SELECT';
+export const REQUEST_FAILED = 'REQUEST_FAILED';
+export const SET_EXPENSE = 'SET_EXPENSE';
